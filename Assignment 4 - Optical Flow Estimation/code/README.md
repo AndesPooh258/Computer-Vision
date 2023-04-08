@@ -1,6 +1,6 @@
 Preparation
-a. download data from given link and put them under the 'data/' and 'open_challenge/data' folders (you can use 'ln -s' to create a soft link the data)
-b. python requirements
+1. download data from given link and put them under the 'data/' and 'open_challenge/data' folders (you can use 'ln -s' to create a soft link the data)
+2. python requirements
    - numpy
    - PyTorch (> 1.0)
    - scipy
@@ -9,34 +9,34 @@ b. python requirements
    - colorama, tqdm, setproctitle
 
 Task1: Implement FlowNet Encoder
-a. Implement 'networks/FlowNetE.py'
+1. Implement 'networks/FlowNetE.py'
 
 Task2: Loss Function
-a. Implement 'EPELoss' in 'losses.py'
-b. run 'run_E.sh'
+1. Implement 'EPELoss' in 'losses.py'
+2. run 'run_E.sh'
 
 Task3: Refinement Module
-a. Implement 'networks/FlowNetER.py'
-b. run 'run_ER.sh'
+1. Implement 'networks/FlowNetER.py'
+2. run 'run_ER.sh'
 
 Task4: Multi-scale Optimization
-a. Implement 'networks/FlowNetERM.py'
-b. Implement 'MultiscaleLoss' in 'losses.py'
-c. run 'run_ERM.sh'
+1. Implement 'networks/FlowNetERM.py'
+2. Implement 'MultiscaleLoss' in 'losses.py'
+3. run 'run_ERM.sh'
 
 Task5: Open Challenge
-a. go into the 'open_challenge' directory, implement 'networks/FlowNetOurs.py' and 'Oursloss' in 'losses.py'
-b. you can also modify input transformation code in 'dataset.py'
-c. run 'run_ours.sh'
+1. go into the 'open_challenge' directory, implement 'networks/FlowNetOurs.py' and 'Oursloss' in 'losses.py'
+2. you can also modify input transformation code in 'dataset.py'
+3. run 'run_ours.sh'
 
 Notation
-a. the best validation EPE is printed in the log.
-b. FLOPs and params are printed in the log.
-c. 'test_*.sh' is used to evalute the trained model
+1. the best validation EPE is printed in the log.
+2. FLOPs and params are printed in the log.
+3. 'test_*.sh' is used to evalute the trained model
 
 Submission
-a. you need to sumbit the codes and trained checkpoints (save in 'work/' automatically)
-b. you should only keep '*_model_best.pth.tar' and clean other irrelevant files in 'work/'
-c. you should move 'data/' out before 'zip'
-d. add a readme file to tell the TAs which tasks you complete.
+1. you need to sumbit the codes and trained checkpoints (save in 'work/' automatically)
+2. you should only keep '*_model_best.pth.tar' and clean other irrelevant files in 'work/'
+3. you should move 'data/' out before 'zip'
+4. add a readme file to tell the TAs which tasks you complete.
 
