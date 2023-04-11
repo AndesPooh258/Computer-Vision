@@ -1,7 +1,9 @@
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
 def EPE(output, target):
+    # return torch.linalg.norm(output-target, dim=1).mean()
     return (((output - target) ** 2).sum(dim=1) ** 0.5).mean()
 
 class OursLoss(nn.Module):
