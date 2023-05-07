@@ -30,9 +30,9 @@ Original Image        |  Image After Applying Bilateral Filter |  Image After Ap
 ## Assignment 2 - Imbalanced CIFAR-10 Image Recognition:
 | Task     | Work Done | Validation Accuracy |
 | -----     | -----     | -----       |
-| 1 - 2 | Implement VGGNet and CrossEntropy Loss | TBC |
-| 3 | Implement Conventional Augmentations | TBC |
-| 4 | Implement Cutout and Apply Tricks | 0.70040 | 
+| 1 - 2 | Implement VGGNet and CrossEntropy Loss | 0.51910 |
+| 3 | Implement Conventional Augmentations | 0.64400 |
+| 4 | Implement Cutout and Apply Various Tricks | 0.70040 |
 
 ## Assignment 3 - Local Feature Matching:
 ![](https://github.com/AndesPooh258/Computer-Vision/blob/main/Assignment%203%20-%20%20Local%20Feature%20Matching/result/PTCG/vis_arrows_result.png)
@@ -40,10 +40,10 @@ Original Image        |  Image After Applying Bilateral Filter |  Image After Ap
 ## Assignment 4 - Optical Flow Estimation:
 | Task     | Work Done |  EPE Loss |
 | -----     | -----     | -----       |
-| 1 - 2 | Implement FlowNet Encoder and EPE Loss | TBC |
-| 3 | Implement Refinement Module | TBC |
-| 4 | Implement Multi-scale Optimization | TBC | 
-| 5 | Apply Tricks | TBC | 
+| 1 - 2 | Implement FlowNet Encoder and EPE Loss | 6.031 |
+| 3 | Implement Refinement Module | 5.985 |
+| 4 | Implement Multi-scale Optimization | 5.856 |
+| 5 | Apply Various Tricks | 5.394 |
 
 ## Final Project - Denoising Diffusion Model:
 Generated Image 1       |  Generated Image 2
