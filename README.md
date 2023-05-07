@@ -46,6 +46,5 @@ Original Image        |  Image After Applying Bilateral Filter |  Image After Ap
 | 5 | Apply Tricks | TBC | 
 
 ## Final Project - Denoising Diffusion Model:
-Generated Image 1       |  Generated Image 2
 :-------------------------:|:-------------------------:
 ![](https://github.com/AndesPooh258/Computer-Vision/blob/main/Project%20-%20Denoising%20Diffusion%20Model/codes/results/task5/moegirls_1.png)  |  ![](https://github.com/AndesPooh258/Computer-Vision/blob/main/Project%20-%20Denoising%20Diffusion%20Model/codes/results/task5/moegirls_2.png)
