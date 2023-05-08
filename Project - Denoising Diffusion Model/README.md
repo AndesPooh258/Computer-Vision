@@ -83,6 +83,9 @@ python image_sample_moegirls.py
 
 1c. codes/test_cable_single_5k/log_eval.txt
     - Evaluation log for Task 2
+	
+1d. codes/test_run
+	- Generated image for Task 2
 
 2a. codes/test_uni_20k/ema_0.995_020000.pt
     - Trained model for Task 3
@@ -90,8 +93,8 @@ python image_sample_moegirls.py
 2b. codes/test_uni_20k/log.txt
     - Training log for Task 3
 
-3. codes/test_run
-    - Generated image for Task 2 - 3
+2c. codes/test_run (same as 1d)
+    - Generated image for Task 3
 
 4a. codes/diffusers/examples/text_to_image/sd-pokemon-model-lora/pytorch_lora_weights.bin
     - Trained LoRA weight for Task 4
