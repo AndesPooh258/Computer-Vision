@@ -75,37 +75,34 @@ python image_sample_moegirls.py
 ```
 
 #### Outputs:
-1a. codes/test_cable_single_5k/ema_0.995_005000.pt
+1. codes/test_cable_single_5k/ema_0.995_005000.pt
     - Trained model for Task 2
 
-1b. codes/test_cable_single_5k/log_train.txt
+2. codes/test_cable_single_5k/log_train.txt
     - Training log for Task 2
 
-1c. codes/test_cable_single_5k/log_eval.txt
+3. codes/test_cable_single_5k/log_eval.txt
     - Evaluation log for Task 2
-	
-1d. codes/test_run
-	- Generated image for Task 2
 
-2a. codes/test_uni_20k/ema_0.995_020000.pt
+4. codes/test_uni_20k/ema_0.995_020000.pt
     - Trained model for Task 3
 
-2b. codes/test_uni_20k/log.txt
+5. codes/test_uni_20k/log.txt
     - Training log for Task 3
 
-2c. codes/test_run (same as 1d)
-    - Generated image for Task 3
+6. codes/test_run
+    - Generated image for Task 2 - 3
 
-4a. codes/diffusers/examples/text_to_image/sd-pokemon-model-lora/pytorch_lora_weights.bin
+7. codes/diffusers/examples/text_to_image/sd-pokemon-model-lora/pytorch_lora_weights.bin
     - Trained LoRA weight for Task 4
 
-4b. codes/diffusers/examples/text_to_image/pokemon.png
+8. codes/diffusers/examples/text_to_image/pokemon.png
     - Generated image for Task 4
 
-5a. codes/diffusers/examples/text_to_image/sd-moegirl-model-lora/pytorch_lora_weights.bin
+9. codes/diffusers/examples/text_to_image/sd-moegirl-model-lora/pytorch_lora_weights.bin
     - Trained LoRA weight for Task 5
 
-5b. codes/diffusers/examples/text_to_image/moegirls.png
+10. codes/diffusers/examples/text_to_image/moegirls.png
     - Generated image for Task 5
 
 #### Remarks:

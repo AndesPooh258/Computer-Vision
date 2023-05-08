@@ -35,34 +35,34 @@ python \<filename\>.py
 2. code/results/affine_result.png
     - Resulting image for Task 2
 
-3a. code/results/HistoEqualization.jpg
+3. code/results/HistoEqualization.jpg
     - Resulting image after histogram equalization for Task 3
 
-3b. code/results/LocalHistoEqualization.jpg
+4. code/results/LocalHistoEqualization.jpg
     - Resulting image after local histogram equalization for Task 3
 
-3c. code/results/cdf_original.png
+5. code/results/cdf_original.png
     - Cumulative distribution function of pixel intensity of the original image for Task 3
 
-3d. code/results/cdf_hist_equalization.png
+6. code/results/cdf_hist_equalization.png
     - Cumulative distribution function of pixel intensity of HistoEqualization.jpg for Task 3
     - Compared to the original image, the pixel intensity is more evenly distributed
     - However, for the middle region, the contrast is still insufficiently enhanced
 
-3e. code/results/cdf_local_hist_equalization.png
+7. code/results/cdf_local_hist_equalization.png
     - Cumulative distribution function of pixel intensity of LocalHistoEqualization.jpg for Task 3
     - Compared to histogram equalization, the contrast in the middle region is further enhanced
 
-4. code/results/line_det.png
+8. code/results/line_det.png
     - Resulting image for Task 4
 
-5a. code/results/Billateral.jpg
+9. code/results/Billateral.jpg
     - Resulting image after applying bilateral filter for Task 5
 
-5b. code/results/JointBillateral.jpg
+10. code/results/JointBillateral.jpg
     - Resulting image after applying joint bilateral filter for Task 5
 
-5c. code/results/Bilateral_diff.jpg
+11. code/results/Bilateral_diff.jpg
     - Difference between the above two images, converted to gray color for better visualization
     - From this image, we can see that the edges are better preserved with the joint bilateral filter
 
