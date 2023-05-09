@@ -35,7 +35,7 @@ Original Image        |  Image After Applying Bilateral Filter |  Image After Ap
 | 4 | Implement Cutout and Apply Various Tricks | 0.70040 |
 
 ## Assignment 3 - Local Feature Matching:
-![](https://github.com/AndesPooh258/Computer-Vision/blob/main/Assignment%203%20-%20%20Local%20Feature%20Matching/result/PTCG/vis_arrows_result.png)
+![](https://github.com/AndesPooh258/Computer-Vision/blob/main/Assignment%203%20-%20%20Local%20Feature%20Matching/result/Sushi/vis_arrows_result.png)
 
 ## Assignment 4 - Optical Flow Estimation:
 | Task     | Work Done |  EPE Loss |
