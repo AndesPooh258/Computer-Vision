@@ -7,11 +7,12 @@
     Arguments:
     -h, --help            Show help message and exit
     --query QUERY         Search query enclosed by "", please check https://danbooru.donmai.us/wiki_pages/help:cheatsheet for more details
-    --max_page MAX_PAGES  Maximum number of pages
+    --max_pages MAX_PAGES
+                          Maximum number of pages
     --output_dir OUTPUT_DIR
                           Output directory
     --output_size OUTPUT_SIZE
-                          Output Size, set to 0 if do not resize
+                          Output size, set to 0 if do not need preprocessing
     --nsfw NSFW           Download nsfw image or not
 """
 from argparse import ArgumentParser
@@ -28,7 +29,7 @@ parser.add_argument("--query", type=str, default="", help='Search query enclosed
                      please check https://danbooru.donmai.us/wiki_pages/help:cheatsheet for more details')
 parser.add_argument("--max_pages", type=int, default=1, help="Maximum number of pages")
 parser.add_argument("--output_dir", type=Path, default="output", help="Output directory")
-parser.add_argument("--output_size", type=int, default=0, help="Output Size, set to 0 if do not resize")
+parser.add_argument("--output_size", type=int, default=0, help="Output size, set to 0 if do not need preprocessing")
 parser.add_argument("--nsfw", type=str, default="False", help="Download nsfw image or not")
 
 headers = {"User-Agent": "CrawlDanbooru/1.0"}
@@ -62,17 +63,17 @@ def get_img(args, post):
     img_file = args.output_dir / Path(img_name)
     if img_file.exists():
         return False
-    img_url = post["large_file_url"] if "large_file_url" in post \
-              else post["file_url"] if "file_url" in post else None
+    img_url = post["file_url"] if "file_url" in post else None
     if (img_url is None):
         return False
-    res = requests.get(img_url, headers=headers)
-    img = cv2.imdecode(np.frombuffer(res.content, np.uint8), cv2.IMREAD_UNCHANGED)
-    if img is None:
-        return False
-    elif args.output_size > 0:
-        img = resize(img, args.output_size)
-    cv2.imwrite(str(args.output_dir) + "/" + img_name, img)
+    res = requests.get(img_url, headers=headers, stream=True)
+    if args.output_size > 0:
+        img = cv2.imdecode(np.frombuffer(res.content, np.uint8), cv2.IMREAD_UNCHANGED)
+        cv2.imwrite(str(args.output_dir) + "/" + img_name, resize(img, args.output_size))
+    else:
+        with img_file.open('wb') as file:
+            for bytes in res.iter_content(chunk_size=128):
+                file.write(bytes)  
     tags_file = args.output_dir / Path("metadata.jsonl")
     with tags_file.open('a') as file:
         file.write('{"file_name": "' + img_name + '", "text": "' + tags + '"}\n')
