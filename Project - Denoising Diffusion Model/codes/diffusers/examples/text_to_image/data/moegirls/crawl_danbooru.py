@@ -35,10 +35,13 @@ parser.add_argument("--nsfw", type=str, default="False", help="Download nsfw ima
 headers = {"User-Agent": "CrawlDanbooru/1.0"}
 
 banned_tags = ["furry", "realistic", "3d", "magazine_scan", "scan", "pixel art", "screentones", "retro_artstyle", \
-               "1940s (style)", "1950s (style)", "1960s (style)", "1970s (style)", "1980s (style)", "1990s (style)"]
-unused_tags = ["translation request", "translated", "commentary", "commentary request", "commentary typo", \
-               "character request", "bad id", "bad link", "bad pixiv_id", "bad twitter id", "bad tumblr id", \
-               "bad deviantart id", "bad nicoseiga_id", "md5 mismatch", "cosplay request", "artist request", \
+               "1940s (style)", "1950s (style)", "1960s (style)", "1970s (style)", "1980s (style)", "1990s (style)", \
+               "duplicate", "pixel-perfect duplicate"]
+unused_tags = ["translation request", "translated", "commentary", "commentary request", "english commentary", \
+               "chinese commentary", "symbol-only commentary", "korean commentary", "partial commentary", \
+               "mixed-language commentary", "check commentary", "dated commentary", "romaji commentary", "commentary typo", \
+               "character request", "bad id", "bad link", "bad pixiv id", "bad twitter id", "bad tumblr id", \
+               "bad deviantart id", "bad nicoseiga id", "md5 mismatch", "cosplay request", "artist request", \
                "wide image", "author request"]
 nsfw_tags = ["sex", "oral", "fellatio gesture", "tentacle sex", "nipples", "pussy", "vaginal", "pubic hair", \
              "anus", "ass focus", "penis", "cum", "condom", "sex toy"]
@@ -50,7 +53,7 @@ def resize(im, output_size):
 def get_img(args, post):
     if post["file_ext"] not in ["jpg", "png"]:
         return False
-    tags = post["tag_string"].replace(" ", ", ").replace("_", " "  )
+    tags = post["tag_string"].replace(" ", ", ").replace("_", " ").replace("\\", "").replace('"', "")
     tag_list = [tag for tag in tags.split(", ") if tag not in unused_tags]
     for banned_tag in banned_tags:
         if banned_tag in tag_list:
@@ -76,7 +79,7 @@ def get_img(args, post):
                 file.write(bytes)  
     tags_file = args.output_dir / Path("metadata.jsonl")
     with tags_file.open('a') as file:
-        file.write('{"file_name": "' + img_name + '", "text": "' + tags + '"}\n')
+        file.write('{"file_name": "' + img_name + '", "text": "' + ", ".join(tag_list) + '"}\n')
     return True
 
 def main(args):
